@@ -2,5 +2,6 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ActiveDebugProfile>Docker</ActiveDebugProfile>
+    <NameOfLastUsedPublishProfile>C:\Users\moolm\source\Year3\prgWordleAPI\WordleAPI\Properties\PublishProfiles\registry.hub.docker.com_st10219213.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>

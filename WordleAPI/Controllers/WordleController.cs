@@ -6,7 +6,9 @@ namespace WordleAPI.Controllers
     [Route("api/wordle")]
     public class WordleController : ControllerBase
     {
-        private static List<string> wordList = new List<string> { "foods", "foods", "foods", "foods", "foods", "foods" };
+        private static List<string> wordList = new List<string> 
+        { "foods", "mount", "yield", "yield", "truth", "model", "forum", "chart", "shock", "vital", "there",
+        "sheet", "doubt", "upper", "begun", "clear", "click", "chain", "sport", "delay", "guide", "quiet"};
         private static string currentWord = "";
 
         private readonly ILogger<WordleController> _logger;
@@ -15,7 +17,9 @@ namespace WordleAPI.Controllers
         {
             _logger = logger;
         }
-
+        // url: https://localhost:32778/api/wordle
+        // get method
+        // 
         [HttpGet(Name = "generateWord")]
         public string Get()
         {
@@ -30,50 +34,57 @@ namespace WordleAPI.Controllers
             List<WordValidations> validations = new List<WordValidations>();
 
             // assigning the string to a char array
-            string temp = word;
+            string temp = word.ToString().ToLower();
             char[] chars = temp.ToCharArray();
             char[] currentChars = currentWord.ToCharArray();
-
-            if (chars.Count() == 5)
+            try
             {
-                if (char.IsLetter(chars[0]) && char.IsLetter(chars[1]) && char.IsLetter(chars[2]) && char.IsLetter(chars[3]) && char.IsLetter(chars[4]))
+                if (chars.Count() == 5)
                 {
-                    WordValidations wordValidations;
-                    int counter = 0;
-                    foreach (char c in chars)
+                    if (char.IsLetter(chars[0]) && char.IsLetter(chars[1]) && char.IsLetter(chars[2]) && char.IsLetter(chars[3]) && char.IsLetter(chars[4]))
                     {
-                        wordValidations = new WordValidations();
-                        if (currentWord.Contains(c.ToString()))
+                        WordValidations wordValidations;
+                        int counter = 0;
+                        foreach (char c in chars)
                         {
-                            wordValidations.wordContains = true;
-                            if (currentChars[counter] == chars[counter])
+                            wordValidations = new WordValidations();
+                            if (currentWord.Contains(c.ToString()))
                             {
-                                wordValidations.charPosition = true;
+                                wordValidations.wordContains = true;
+                                if (currentChars[counter] == chars[counter])
+                                {
+                                    wordValidations.charPosition = true;
+                                }
+                                else
+                                {
+                                    wordValidations.charPosition = false;
+                                }
+                                validations.Add(wordValidations);
                             }
                             else
                             {
+                                wordValidations.wordContains = false;
                                 wordValidations.charPosition = false;
+                                validations.Add(wordValidations);
                             }
-                            validations.Add(wordValidations);
+                            counter++;
                         }
-                        else
-                        {
-                            wordValidations.wordContains = false;
-                            wordValidations.charPosition = false;
-                            validations.Add(wordValidations);
-                        }
-                        counter++;
+                    }
+                    else
+                    {
+                        // not all chars are characters
                     }
                 }
                 else
                 {
-                    // not all chars are characters
+                    // not enough chars
                 }
             }
-            else
+            catch (Exception e)
             {
-                // not enough chars
+                Console.WriteLine("Error occured " + e.ToString());
             }
+            
             return Enumerable.Range(0, 5).Select(index => new WordValidations
             {
                 wordContains = validations[index].wordContains,
