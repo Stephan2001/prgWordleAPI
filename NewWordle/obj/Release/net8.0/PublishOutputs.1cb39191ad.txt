@@ -1,0 +1,12 @@
+C:\Users\moolm\source\Year3\WordleAPI\NewWordle\NewWordle\obj\Docker\publish\NewWordle.exe
+C:\Users\moolm\source\Year3\WordleAPI\NewWordle\NewWordle\obj\Docker\publish\appsettings.Development.json
+C:\Users\moolm\source\Year3\WordleAPI\NewWordle\NewWordle\obj\Docker\publish\appsettings.json
+C:\Users\moolm\source\Year3\WordleAPI\NewWordle\NewWordle\obj\Docker\publish\NewWordle.dll
+C:\Users\moolm\source\Year3\WordleAPI\NewWordle\NewWordle\obj\Docker\publish\NewWordle.deps.json
+C:\Users\moolm\source\Year3\WordleAPI\NewWordle\NewWordle\obj\Docker\publish\NewWordle.runtimeconfig.json
+C:\Users\moolm\source\Year3\WordleAPI\NewWordle\NewWordle\obj\Docker\publish\NewWordle.pdb
+C:\Users\moolm\source\Year3\WordleAPI\NewWordle\NewWordle\obj\Docker\publish\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\moolm\source\Year3\WordleAPI\NewWordle\NewWordle\obj\Docker\publish\Microsoft.OpenApi.dll
+C:\Users\moolm\source\Year3\WordleAPI\NewWordle\NewWordle\obj\Docker\publish\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\moolm\source\Year3\WordleAPI\NewWordle\NewWordle\obj\Docker\publish\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\moolm\source\Year3\WordleAPI\NewWordle\NewWordle\obj\Docker\publish\Swashbuckle.AspNetCore.SwaggerUI.dll
